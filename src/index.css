@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--fonts: 'Josefin Sans', sans-serif;
+	--fs-normal: 18px;
+	--fs-light: 14px;
+	--fs-bold: 40px;
+	--fw-noral: 400;
+	--fw-bold: 700;
+	--lsp: 0.4em;
+	--bg-gradient: linear-gradient(130deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+	--color-active: hsl(220, 98%, 61%);
+	--color-header: hsl(0, 0%, 98%);
+	--radii: 8px;
+}
+
+body[data-theme='dark'] {
+	--bg: hsl(235, 21%, 11%);
+	--color-box: hsl(235, 24%, 19%);
+	--color-text: hsl(234, 39%, 85%);
+	--color-typing: hsl(233, 11%, 84%);
+	--hover: hsl(236, 33%, 92%);
+	--border-color: hsl(237, 14%, 26%);
+	--shadow: 1px 28px 17px -18px hsl(235, 0%, 0%);
+	--complete: hsl(235, 19%, 35%);
+	--color-bottom: hsl(235, 19%, 35%);
+	--placeholder: hsl(234, 11%, 52%);
+}
+body[data-theme='light'] {
+	--bg: hsl(236, 33%, 92%);
+	--color-box: hsl(0, 0%, 98%);
+	--color-text: hsl(235, 24%, 19%);
+	--color-typing: hsl(235, 21%, 11%);
+	--hover: hsl(237, 14%, 26%);
+	/* --border-color: hsl(233, 11%, 84%); */
+	--border-color: hsl(236, 33%, 92%);
+	--shadow: 1px 28px 17px -18px hsl(233, 11%, 84%);
+	--complete: hsl(233, 11%, 84%);
+	--color-bottom: hsl(234, 11%, 52%);
+	--placeholder: hsl(234, 39%, 85%);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--fonts);
+	font-size: var(--fs-normal);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--bg);
+}
