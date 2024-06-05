@@ -11,12 +11,14 @@ const TodoItem: React.FC<ITodo> = props => {
 
 	return (
 		<React.Fragment>
-			<div className={todo.completed ? 'todo-circle complete' : 'todo-circle'} onClick={e => toggleTodo(todo.id)}>
-				{todo.completed ? <Check /> : null}
-			</div>
-			<p className={todo.completed ? 'todo-title todo-complete' : 'todo-title'}>{todo.title}</p>
-			<div className="todo-cross" onClick={e => removeTodo(todo.id)}>
-				<Cross />
+			<div key={todo.id} className="todo-item">
+				<div className={todo.completed ? 'todo-circle complete' : 'todo-circle'} onClick={e => toggleTodo(todo.id)}>
+					{todo.completed ? <Check /> : null}
+				</div>
+				<p className={todo.completed ? 'todo-title todo-complete' : 'todo-title'}>{todo.title}</p>
+				<div className="todo-cross" onClick={e => removeTodo(todo.id)}>
+					<Cross />
+				</div>
 			</div>
 		</React.Fragment>
 	)

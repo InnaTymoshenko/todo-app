@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Reorder } from 'framer-motion'
 import TodoItem from '../todoItem/TodoItem'
 import TodoSelect from '../todoSelect/TodoSelect'
 import { useTodoSelect, useTodos } from '../../store/store'
+import { ITodo } from '../../types/data'
 
 const TodoList: React.FC = props => {
 	const select = useTodoSelect(state => state.select)
@@ -17,14 +19,22 @@ const TodoList: React.FC = props => {
 		}
 	})
 
+	const [items, setItems] = useState<ITodo[]>([])
+
+	useEffect(() => {
+		setItems(todos)
+	}, [todos])
+
 	return (
 		<React.Fragment>
 			<div className="todo-list">
-				{todos.map(todo => (
-					<div key={todo.id} className="todo-item">
-						<TodoItem id={todo.id} title={todo.title} completed={todo.completed} countId={todo.countId} />
-					</div>
-				))}
+				<Reorder.Group as="div" axis="y" values={items} onReorder={setItems}>
+					{items.map(todo => (
+						<Reorder.Item as="div" key={todo.id} value={todo}>
+							<TodoItem id={todo.id} title={todo.title} completed={todo.completed} countId={todo.countId} />
+						</Reorder.Item>
+					))}
+				</Reorder.Group>
 
 				<div>
 					{todos.length ? (
