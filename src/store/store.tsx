@@ -19,7 +19,44 @@ interface ISelect {
 export const useTodos = create<ITodoStore>()(
 	persist<ITodoStore>(
 		(set, get) => ({
-			todos: [],
+			todos: [
+				{
+					id: uuidv4(),
+					countId: 1,
+					title: 'Complete online Javascript course',
+					completed: true
+				},
+				{
+					id: uuidv4(),
+					countId: 2,
+					title: 'Jog around the park 3x',
+					completed: false
+				},
+				{
+					id: uuidv4(),
+					countId: 3,
+					title: '10 minutes meditation',
+					completed: false
+				},
+				{
+					id: uuidv4(),
+					countId: 4,
+					title: 'Read for 1 hour',
+					completed: false
+				},
+				{
+					id: uuidv4(),
+					countId: 5,
+					title: 'Pick up groceries',
+					completed: false
+				},
+				{
+					id: uuidv4(),
+					countId: 6,
+					title: 'Complete Todo App on Frontend Mentor',
+					completed: false
+				}
+			],
 			addTodo: title => {
 				const newTodo = {
 					id: uuidv4(),
